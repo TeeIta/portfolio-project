@@ -1,0 +1,17 @@
+<div>
+
+  <angular4-paystack
+  #paystack
+
+  [key]="paymentData.publicKey"
+  [email]="paymentData.email"
+  [amount]="paymentData.amount"
+  ref="reference"
+  (callback)="paymentDone($event)"
+  (onClose)="paymentCancel()"
+  class="btn btn-primary"
+  >Pay Now
+  </angular4-paystack>
+ 
+</div>
+

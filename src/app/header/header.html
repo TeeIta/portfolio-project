@@ -1,0 +1,37 @@
+<nav class="navbar fixed-top transition-all" [class.scrolled]="isScrolled">
+  <div class="container px-4 px-lg-5">
+    <a class="logo" href="#">
+      <span class="dot"></span> PORTFOLIO
+    </a>
+
+   <div class="nav-center d-none d-lg-flex">
+  <ul class="nav-links mb-0">
+    <li>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    </li>
+    
+    <li>
+      <a routerLink="/projects" routerLinkActive="active">Projects</a>
+    </li>
+    
+    <li>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+    </li>
+    <li>
+      <a routerLink="/my-services" routerLinkActive="active">Services</a>
+    </li>
+    
+    <li>
+      <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    </li>
+  </ul>
+</div>
+
+    <div class="nav-right d-flex align-items-center gap-3">
+      <div class="search-box d-none d-sm-block">
+        <input type="text" placeholder="Search projects...">
+      </div>
+      <button class="btn-signup shadow-sm" (click)="onHireMeClick()">Hire Me</button>
+    </div>
+  </div>
+</nav>

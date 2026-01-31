@@ -1,0 +1,62 @@
+<div class="container py-5 mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow border-0 position-relative">
+        
+        <button type="button" class="btn-close p-3 position-absolute top-0 end-0" (click)="onClose()"></button>
+
+        <div class="card-body p-5">
+          <div *ngIf="!submitted; else successMessage">
+            <h2 class="card-title fw-bold mb-4 text-center">Hire Me</h2>
+            
+            <form (ngSubmit)="onSubmit()" #hireForm="ngForm" novalidate>
+              
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Full Name</label>
+                <input type="text" class="form-control" name="fullName" [(ngModel)]="formData.fullName" required minlength="3" #nameInput="ngModel">
+                <div class="text-danger small" *ngIf="nameInput.touched && nameInput.invalid">Name is required (min 3 chars).</div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Email Address</label>
+                <input type="email" class="form-control" name="email" [(ngModel)]="formData.email" required email #emailInput="ngModel">
+                <div class="text-danger small" *ngIf="emailInput.touched && emailInput.invalid">Please enter a valid email.</div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Project Category</label>
+                <select class="form-select" name="project" [(ngModel)]="formData.project" required>
+                  <option value="" disabled>Choose a service...</option>
+                  <option value="ui-design">UI/UX Design</option>
+                  <option value="development">Web Development</option>
+                  <option value="consulting">Tech Consulting</option>
+                </select>
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label fw-semibold">Project Details</label>
+                <textarea class="form-control" name="message" [(ngModel)]="formData.message" rows="4" required></textarea>
+              </div>
+
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg py-3" [disabled]="!hireForm.form.valid">
+                  Send Inquiry
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <ng-template #successMessage>
+            <div class="text-center py-4">
+              <div class="display-1 text-success mb-3">✓</div>
+              <h3>Request Sent!</h3>
+              <p class="text-muted">Thank you, {{formData.fullName}}. I will get back to you shortly.</p>
+              <button class="btn btn-outline-primary mt-3" (click)="onClose()">Return Home</button>
+            </div>
+          </ng-template>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
