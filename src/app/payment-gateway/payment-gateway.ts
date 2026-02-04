@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Angular4PaystackModule } from 'angular4-paystack';
 
 @Component({
   selector: 'app-payment-gateway',
-  imports: [Angular4PaystackModule],
+  imports: [],
   templateUrl: './payment-gateway.html',
   styleUrl: './payment-gateway.css',
 })
