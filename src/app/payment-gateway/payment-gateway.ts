@@ -20,11 +20,7 @@ constructor(){
   this.generateReference();
 }
 
-// generateReference(){
-//   this.reference = 'ref-' + Math.random().toString(36).substring(2);
-// }
 generateReference(): void {
-  // Adding a random string + high-res timestamp ensures it's never the same
   this.reference = `REF-${Math.floor(Math.random() * 1000000)}-${new Date().getTime()}`;
 }
 
@@ -37,27 +33,4 @@ paymentCancel(){
   console.log("User closed modal")
   this.generateReference();
 }
-
 }
-
-
-// export class PaymentGateway implements OnInit {
-  // @Input() payload: any;
-
-  // ngOnInit(): void {
-  //   console.log('Payload: ', this.payload);
-    
-  // }
-  // paymentCancel(){
-  //   console.log('Payment cancelled');
-  // }
-
-  // paymentDone(response: any){
-  //   console.log('Payment successful', response);
-  // }
-
-//  get paymentRef() {  
-//   return 'ref-' + Math.random().toString(36).substring(2, 15);
-// }
-// }
-

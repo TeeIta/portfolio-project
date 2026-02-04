@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { Dialog } from '@angular/cdk/dialog';
 import { FormModule } from '../form-module/form-module';
 
@@ -25,4 +25,7 @@ export class Landing {
 
     console.log("Function is running...");
   }
+  @Input() messages: string[] = [];
+  @Input() speed: string = '20s'; // Default speed
+  @Input() bgColor: string = '#333'; // Default background
 }

@@ -3,7 +3,7 @@
   --accent: #007bff;
   --text-main: #212529;
   --text-muted: #6c757d;
-  --consult-color: #14b8a6;
+  --consult-color: #007bff;
 }
 
 .portfolio-wrapper {
@@ -11,13 +11,10 @@
   overflow-x: hidden; 
 }
 
-/* --- HERO SECTION --- */
 .hero {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  /* padding: 2rem; */
-  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
 }
 
 .hero-content {
@@ -31,6 +28,8 @@
   order: 1; 
   width: 100%;
   height: 40vh; 
+  position: relative;
+  max-width: 100%;
 }
 
 .hero-visual img {
@@ -44,6 +43,32 @@
   font-weight: 700;
   color: var(--text-main);
 }
+
+.gradient-text {
+  font-size: 4rem;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: -1px;
+
+  background: linear-gradient(
+    to right, 
+    #0d6efd, 
+    #00ff88, 
+    #003d7e, 
+    #5a01ce
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shimmer 5s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 300% center; }
+}
+
 
 /* --- BUTTONS --- */
 .cta-actions {
@@ -73,7 +98,7 @@
 @media (min-width: 992px) {
   .hero {
     flex-direction: row;
-    padding: 0;
+    padding: 50px;
     gap: 0;
   }
 
@@ -98,3 +123,55 @@
     align-items: flex-start;
   }
 }
+
+/* Marquee */
+.marquee-window {
+  width: 100%;
+  overflow: hidden;
+  background: #333;
+  color: white;
+  padding: 10px 0;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 9999;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: scroll-left 15s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+
+/* 
+
+
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.track {
+  display: inline-flex;
+  gap: 100px;
+  animation: scroll 20s linear infinite;
+}
+
+.track img {
+  height: 40px;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+} */

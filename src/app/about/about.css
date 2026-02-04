@@ -1,0 +1,61 @@
+.about-section-light {
+  color: #333;
+}
+
+.text-primary-gradient {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-card-light {
+  position: relative;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.image-shadow-wrapper {
+  padding: 10px;
+  background: #f8fafc;
+  border-radius: 24px;
+}
+
+.experience-badge-light {
+  position: absolute;
+  bottom: 20px;
+  right: -15px;
+  background: #4f46e5;
+  padding: 15px 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.4);
+  animation: float 3s ease-in-out infinite;
+}
+
+.stat-item-light {
+  border-left: 4px solid #e2e8f0;
+  padding-left: 20px;
+  transition: border-color 0.3s ease;
+}
+
+.stat-item-light:hover {
+  border-left-color: #4f46e5; 
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Responsive adjustment for Mobile */
+@media (max-width: 991px) {
+  .about-section-light {
+    text-align: center;
+  }
+  .experience-badge-light {
+    right: 15px; 
+    bottom: 10px;
+  }
+}
