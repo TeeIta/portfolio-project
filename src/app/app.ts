@@ -5,7 +5,6 @@ import { Projects } from './projects/projects';
 import { MyServices } from './my-services/my-services';
 import { Footer } from './footer/footer';
 import { About } from './about/about';
-import { Landing } from "./landing/landing";
 import { Testimonial } from './testimonial/testimonial';
 @Component({
   selector: 'app-root',
